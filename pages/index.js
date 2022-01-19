@@ -31,7 +31,7 @@ function HomePage(props) {
 //   };
 // }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   //fetch data from an API
 
   const client = await MongoClient.connect(
@@ -53,7 +53,6 @@ export async function getStaticProps() {
         id: meetup._id.toString(),
       })),
     },
-    revalidate: 1,
   };
 }
 
